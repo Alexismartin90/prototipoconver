@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/main.css">
+    <title>🚀👍 Tu Puedes!!</title>
+</head>
+
+<body>
+    <!-- Barra de arriba estilo navbar -->
+    <section class="barraSuperior">
+        <h1 class="barraSuperior__h1">Sistema de Conversión de Unidades</h1>
+        <h2 class="barraSuperior__h2">Herramienta diseñada para facilitar el trabajo en el taller</h2>
+    </section>
+
+    <!-- Seccion principal con las Cards de cada magnitud -->
+    <section class="converter">
+        <div class="card">
+            <img class="card__img" src="./img/distancia.png" alt="">
+            <button id="btn-dist" class="card__button">Distancia</button>
+        </div>
+        <div class="card">
+            <img class="card__img" src="./img/presion.png" alt="">
+            <button id="btn-pres" class="card__button">Presión</button>
+        </div>
+        <div class="card">
+            <img class="card__img" src="./img/temperatura.png" alt="">
+            <button id="btn-temp" class="card__button">Temperatura</button>
+        </div>
+        <div class="card">
+            <img class="card__img" src="./img/torque.png" alt="">
+            <button id="btn-torq" class="card__button">Torque</button>
+        </div>
+        <div class="card">
+            <img class="card__img" src="./img/velocidad.png" alt="">
+            <button id="btn-veloc" class="card__button">Velocidad</button>
+        </div>
+        <div class="card">
+            <img class="card__img" src="./img/electricidad.png" alt="">
+            <button id="btn-elect" class="card__button">Electricidad</button>
+        </div>
+    </section>
+
+    <!-- Seccion de Divs ocultos SPA - Cards - Magnitudes -->
+    <section class="overlay">
+
+        <!-- Div de DISTANCIA -->
+        <div id="distancia-mag" class="calc">
+            <div class="calc__div">
+                <label for="dist1">Ingrese Distancia, para decimal usar "."</label>
+                <input id="dist1" type="text">
+            </div>
+            <div class="calc__div">
+                <label for="dist2">Convertir desde:</label>
+                <select name="dist2" id="dist2">
+                    <option value="kilo">Kilometros</option>
+                    <option value="milla">Millas</option>
+                </select>
+            </div>
+            <div class="calc__div">
+                <div class="calc__result">
+                    <p>Kilometros:</p>
+                    <div class="output"><p>Resultado</p></div>
+                </div>
+                <div class="calc__result">
+                    <p>Millas:</p>
+                    <div class="output"><p>Resultado</p></div>
+                </div>
+            </div>
+            <button class="volver">Volver</button>
+        </div>
+
+        <!-- Div de PRESION -->
+        <div id="presion-mag" class="calc">
+            <div class="calc__div">
+                <label for="pres1">Ingrese Presion, para decimal usar "."</label>
+                <input id="pres1" type="text">
+            </div>
+            <div class="calc__div">
+                <label for="pres2">Convertir desde:</label>
+                <select name="pres2" id="pres2">
+                    <option value="psi">psi</option>
+                    <option value="bar">bar</option>
+                    <option value="atm">atm</option>
+                    <option value="inhg">inHg</option>
+                    <option value="hpa">hPa</option>
+                </select>
+            </div>
+            <div class="calc__div">
+                <div class="calc__result">
+                    <p>psi:</p>
+                    <div class="output"><p>Resultado</p></div>
+                </div>
+                <div class="calc__result">
+                    <p>bar:</p>
+                    <div class="output"><p>Resultado</p></div>
+                </div>
+                <div class="calc__result">
+                    <p>atm:</p>
+                    <div class="output"><p>Resultado</p></div>
+                </div>
+                <div class="calc__result">
+                    <p>inHg:</p>
+                    <div class="output"><p>Resultado</p></div>
+                </div>
+                <div class="calc__result">
+                    <p>hPa:</p>
+                    <div class="output"><p>Resultado</p></div>
+                </div>
+            </div>
+            <button class="volver">Volver</button>
+        </div>
+
+        <!-- Div de TEMPERATURA -->
+        <div id="temp-mag" class="calc">
+            <div class="calc__div">
+                <label for="temp1">Ingrese Temperatura, para decimal usar "."</label>
+                <input id="temp1" type="text">
+            </div>
+            <div class="calc__div">
+                <label for="temp2">Convertir desde:</label>
+                <select name="temp2" id="temp2">
+                    <option value="c">°C</option>
+                    <option value="f">°F</option>
+                    <option value="k">K</option>
+                </select>
+            </div>
+            <div class="calc__div">
+                <div class="calc__result">
+                    <p>°C:</p>
+                    <div class="output"><p>Resultado</p></div>
+                </div>
+                <div class="calc__result">
+                    <p>°F:</p>
+                    <div class="output"><p>Resultado</p></div>
+                </div>
+                <div class="calc__result">
+                    <p style="margin-left: 0.4rem;">K:</p>
+                    <div class="output"><p>Resultado</p></div>
+                </div>
+            </div>
+            <button class="volver">Volver</button>
+        </div>
+
+        <!-- Div de TORQUE -->
+        <div id="torque-mag" class="calc">
+            <div class="calc__div">
+                <label for="torq1">Ingrese Torque, para decimal usar "."</label>
+                <input id="torq1" type="text">
+            </div>
+            <div class="calc__div">
+                <label for="torq2">Convertir desde:</label>
+                <select name="torq2" id="torq2">
+                    <option value="lbft">lb·ft</option>
+                    <option value="lbin">lb·in</option>
+                    <option value="nm">N·m</option>
+                    <option value="kgm">kgf·m</option>
+                </select>
+            </div>
+            <div class="calc__div">
+                <div class="calc__result">
+                    <p>lb·ft:</p>
+                    <div class="output"><p>Resultado</p></div>
+                </div>
+                <div class="calc__result">
+                    <p>lb·in:</p>
+                    <div class="output"><p>Resultado</p></div>
+                </div>
+                <div class="calc__result">
+                    <p>N·m</p>
+                    <div class="output"><p>Resultado</p></div>
+                </div>
+                <div class="calc__result">
+                    <p>kgf·m:</p>
+                    <div class="output"><p>Resultado</p></div>
+                </div>
+            </div>
+            <button class="volver">Volver</button>
+        </div>
+
+        <!-- Div para VELOCIDAD -->
+        <div id="velocidad-mag" class="calc">
+            <div class="calc__div">
+                <label for="veloc1">Ingrese Velocidad, para decimal usar "."</label>
+                <input id="veloc1" type="text">
+            </div>
+            <div class="calc__div">
+                <label for="veloc2">Convertir desde:</label>
+                <select name="veloc2" id="veloc2">
+                    <option value="kts">kts (nudos)</option>
+                    <option value="mph">mph</option>
+                    <option value="kmh">km/h</option>
+                </select>
+            </div>
+            <div class="calc__div">
+                <div class="calc__result">
+                    <p>kts (nudos):</p>
+                    <div class="output"><p>Resultado</p></div>
+                </div>
+                <div class="calc__result">
+                    <p>mph:</p>
+                    <div class="output"><p>Resultado</p></div>
+                </div>
+                <div class="calc__result">
+                    <p>km/h:</p>
+                    <div class="output"><p>Resultado</p></div>
+                </div>
+            </div>
+            <button class="volver">Volver</button>
+        </div>
+
+        <!-- Div para Electricidad -->
+        <div id="electr-mag" class="calc">
+            <div class="calc__div">
+                <p>Ley de Ohm:</p>
+                <p>V = I * R</p>
+                <p>I = V / R</p>
+                <p>R = V / I</p>
+            </div>
+            <div class="calc__div">
+                <p>Calculo de Potencia:</p>
+                <p>P = V * I</p>
+                <p>P = I² * R</p>
+                <p>P = V² / R</p>
+            </div>
+            <button class="volver">Volver</button>
+        </div>
+    </section>
+
+    <!-- aca abajo el Footer -->
+    <footer class="footerMain">
+        <p>© 2026 Alexis Gomez. Todos los derechos reservados.</p>
+    </footer>
+    <script src="./javascript/script.js"></script>
+</body>
+
+</html>

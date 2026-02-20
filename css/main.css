@@ -1,0 +1,212 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root{
+    --color-bg-primario : #F8F9FA;
+    --color-bg-secundario : #FFFFFF;
+    --color-bg-SPA : rgba(0, 0, 0, 0.945);
+    --color-text-primario : #1A1C1E;
+    --color-text-secundario : #44474E;
+    --sombra-secciones : 0px 2px 8px black;
+    --sombra-cards : 3px 3px 10px black;
+}
+
+.thema_dark{
+    --color-bg-primario : #111318;
+    --color-bg-secundario : #1A1C1E;
+    --color-text-primario : #E2E2E6;
+    --color-text-secundario : #C2C6CF;
+    --color-acento : #D1E4FF;
+}
+
+.barraSuperior{
+    padding: 1rem;
+    background-color: var(--color-bg-secundario);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    box-shadow: var(--sombra-secciones);
+    position: fixed;
+    top: 0;
+    width: 100%;
+    left: 0;
+    z-index: 10;
+}
+
+.barraSuperior__h1{
+    color: var(--color-text-primario);
+}
+
+.barraSuperior__h2{
+    color: var(--color-text-secundario);
+}
+
+.converter{
+    position: relative;
+    z-index: 2;
+    padding-top: 11rem;
+    display: grid;
+    place-items: center;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    row-gap: 3rem;
+    background-color: var(--color-bg-primario);
+    box-shadow: var(--sombra-secciones);
+}
+
+.card{
+    width: 15rem;
+    height: 18rem;
+    background-color: var(--color-bg-secundario);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 2rem;
+    border: solid 2px black;
+    margin-bottom: 2rem;
+    border-radius: 0.6rem;
+    box-shadow: var(--sombra-cards);
+}
+
+.card__img{
+    width: 14.5rem;       
+    height: auto;     
+    object-fit: cover; 
+    display: block;
+}
+
+.card__button{
+    padding: 0.3rem;
+    border-radius: 0.5rem;
+}
+
+.footerMain{
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--color-bg-secundario);
+}
+
+/* Aca comienzan las SPA que estan ocultas por defecto */
+.overlay{
+    position: fixed;
+    z-index: 20;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    overflow-y: auto;
+    background-color: var(--color-bg-SPA);
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+/* aca cada el contenedor de cada magnitud */
+
+.calc{
+    width: 25rem;
+    height: auto;
+    padding: 2rem 1rem 2rem 1rem;
+    background-color: var(--color-bg-secundario);
+    display: none;
+    flex-direction: column;
+    border: solid 2px var(--sombra-cards);
+    border-radius: 1.3rem;
+    box-shadow: 5px 5px 10px rgb(128, 125, 125);
+}
+
+.calc__div{
+    width: 100%;
+    margin-bottom: 2rem;
+}
+
+.calc__result{
+    display: flex;
+    flex-direction: row;
+    gap: 0.5rem;
+}
+
+/*  aca cada div de magnitudes por ID */
+#distancia-mag{
+    display: none;
+}
+
+#presion-mag{
+    display: none;
+}
+
+#temp-mag{
+    display: none;
+}
+
+#torque-mag{
+    display: none;
+}
+
+#velocidad-mag{
+    display: none;
+}
+
+#electr-mag{
+    display: none;
+}
+
+@media (max-width : 768px){
+    .converter{
+    position: relative;
+    z-index: 2;
+    padding-top: 6rem;
+    display: grid;
+    place-items: center;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
+    row-gap: 1rem;
+    background-color: var(--color-bg-primario);
+    box-shadow: var(--sombra-secciones);
+    }
+
+    .card{
+    width: 8rem;
+    height: 9rem;
+    background-color: var(--color-bg-secundario);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 1rem;
+    border: solid 2px black;
+    margin-bottom: 2rem;
+    border-radius: 0.6rem;
+    box-shadow: var(--sombra-cards);
+    }
+
+    .card__img{
+    width: 6rem;       
+    height: auto;     
+    object-fit: cover; 
+    display: block;
+    }
+
+    .barraSuperior__h1{
+    font-size:small;
+    color: var(--color-text-primario);
+    }
+
+    .barraSuperior__h2{
+    font-size: small;
+    color: var(--color-text-secundario);
+    }
+
+    .footerMain{
+        font-size: small;
+    }
+}
