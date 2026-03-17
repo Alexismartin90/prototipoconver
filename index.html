@@ -50,11 +50,12 @@
         <div id="distancia-mag" class="calc">
             <div class="calc__div">
                 <label for="dist1">Ingrese Distancia, para decimal usar "."</label>
-                <input id="dist1" type="text">
+                <input class="AllInClear" id="dist1" type="number" step="0.0001">
             </div>
             <div class="calc__div">
                 <label for="dist2">Convertir desde:</label>
-                <select name="dist2" id="dist2">
+                <select class="AllselectToIndex" name="dist2" id="dist2">
+                    <option value="" disabled selected hidden>Selecciona unidad</option>
                     <option value="kilo">Kilometros</option>
                     <option value="milla">Millas</option>
                 </select>
@@ -62,11 +63,11 @@
             <div class="calc__div">
                 <div class="calc__result">
                     <p>Kilometros:</p>
-                    <div class="output"><p>Resultado</p></div>
+                    <div class="output"><p id="kmout"></p></div>
                 </div>
                 <div class="calc__result">
                     <p>Millas:</p>
-                    <div class="output"><p>Resultado</p></div>
+                    <div class="output"><p id="millaout"></p></div>
                 </div>
             </div>
             <button class="volver">Volver</button>
@@ -76,11 +77,12 @@
         <div id="presion-mag" class="calc">
             <div class="calc__div">
                 <label for="pres1">Ingrese Presion, para decimal usar "."</label>
-                <input id="pres1" type="text">
+                <input class="AllInClear" id="pres1" type="number" step="0.0001">
             </div>
             <div class="calc__div">
                 <label for="pres2">Convertir desde:</label>
-                <select name="pres2" id="pres2">
+                <select class="AllselectToIndex" name="pres2" id="pres2">
+                    <option value="" disabled selected hidden>Selecciona unidad</option>
                     <option value="psi">psi</option>
                     <option value="bar">bar</option>
                     <option value="atm">atm</option>
@@ -117,11 +119,12 @@
         <div id="temp-mag" class="calc">
             <div class="calc__div">
                 <label for="temp1">Ingrese Temperatura, para decimal usar "."</label>
-                <input id="temp1" type="text">
+                <input class="AllInClear" id="temp1" type="number" step="0.0001">
             </div>
             <div class="calc__div">
                 <label for="temp2">Convertir desde:</label>
-                <select name="temp2" id="temp2">
+                <select class="AllselectToIndex" name="temp2" id="temp2">
+                    <option value="" disabled selected hidden>Selecciona unidad</option>
                     <option value="c">°C</option>
                     <option value="f">°F</option>
                     <option value="k">K</option>
@@ -148,11 +151,12 @@
         <div id="torque-mag" class="calc">
             <div class="calc__div">
                 <label for="torq1">Ingrese Torque, para decimal usar "."</label>
-                <input id="torq1" type="text">
+                <input class="AllInClear" id="torq1" type="number" step="0.0001">
             </div>
             <div class="calc__div">
                 <label for="torq2">Convertir desde:</label>
-                <select name="torq2" id="torq2">
+                <select class="AllselectToIndex" name="torq2" id="torq2">
+                    <option value="" disabled selected hidden>Selecciona unidad</option>
                     <option value="lbft">lb·ft</option>
                     <option value="lbin">lb·in</option>
                     <option value="nm">N·m</option>
@@ -184,11 +188,12 @@
         <div id="velocidad-mag" class="calc">
             <div class="calc__div">
                 <label for="veloc1">Ingrese Velocidad, para decimal usar "."</label>
-                <input id="veloc1" type="text">
+                <input class="AllInClear" id="veloc1" type="number" step="0.0001">
             </div>
             <div class="calc__div">
                 <label for="veloc2">Convertir desde:</label>
-                <select name="veloc2" id="veloc2">
+                <select class="AllselectToIndex" name="veloc2" id="veloc2">
+                    <option value="" disabled selected hidden>Selecciona unidad</option>
                     <option value="kts">kts (nudos)</option>
                     <option value="mph">mph</option>
                     <option value="kmh">km/h</option>
