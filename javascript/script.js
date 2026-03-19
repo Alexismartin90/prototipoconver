@@ -63,6 +63,7 @@ const cardMostrarElect = document.getElementById("electr-mag");
 
 
 // Aca comienza las conversiones de unidades:
+
 // Conversion de Distancia:
 
 const distValueDom = document.getElementById("dist1"); //DOM value input number
@@ -70,22 +71,56 @@ const distOptDom = document.getElementById("dist2"); //DOM value Select Option
 const converterDist = ()=>{
     valorNumero = parseFloat(distValueDom.value);
     valorOption = distOptDom.value;
+    kmfuera = document.querySelector(".KiloDesaparece");
+    millafuera = document.querySelector(".millaDesaparece");
+    kmfuera.classList.remove("oculto_unidad_usada");
+    millafuera.classList.remove("oculto_unidad_usada");
     if(valorOption === "" || isNaN(valorNumero)){
         document.getElementById("kmout").innerText = "Ingrese datos";
         document.getElementById("millaout").innerText = "Ingrese datos";
         return;
     } else if(valorOption === "kilo"){
-        document.getElementById("kmout").innerText = valorNumero;
+        kmfuera.classList.add("oculto_unidad_usada");
+        document.getElementById("kmout").innerText = (valorNumero).toFixed(3);
         document.getElementById("millaout").innerText = (valorNumero / 1.609).toFixed(3);
     } else {
+        millafuera.classList.add("oculto_unidad_usada");
         document.getElementById("kmout").innerText = (valorNumero * 1.609).toFixed(3);
-        document.getElementById("millaout").innerText = valorNumero;
+        document.getElementById("millaout").innerText = (valorNumero).toFixed(3);
     }
 }
-distValueDom.addEventListener("input", converterDist);
-distOptDom.addEventListener("change", converterDist);
+distValueDom.addEventListener("input" , converterDist);
+distOptDom.addEventListener("change" , converterDist);
 
 // Conversion de Presion:
+
+const pressValueDom = document.getElementById("pres1"); //DOM value input number
+const pressOptDom = document.getElementById("pres2"); //DOM value Select Option
+const converterpress = ()=>{
+    valorNumero = parseFloat(pressValueDom.value);
+    valorOption = pressOptDom.value;
+    psifuera = document.querySelector(".psiDesaparece");
+    barfuera = document.querySelector(".barDesaparece");
+    atmbarfuera = document.querySelector(".atmDesaparece");
+    inhgfuera = document.querySelector(".inhgDesaparece");
+    hpafuera = document.querySelector(".hpaDesaparece");
+    psifuera.classList.remove("oculto_unidad_usada");
+    barfuera.classList.remove("oculto_unidad_usada");
+    atmbarfuera.classList.remove("oculto_unidad_usada");
+    inhgfuera.classList.remove("oculto_unidad_usada");
+    hpafuera.classList.remove("oculto_unidad_usada");
+    if(valorOption === "" || isNaN(valorNumero)){
+        document.getElementById("psiOut").innerText = "Ingrese datos";
+        document.getElementById("barOut").innerText = "Ingrese datos";
+        document.getElementById("atmOut").innerText = "Ingrese datos";
+        document.getElementById("inhgOut").innerText = "Ingrese datos";
+        document.getElementById("hpaOut").innerText = "Ingrese datos";
+        return;
+    }
+
+}
+pressValueDom.addEventListener("input" , converterpress)
+pressOptDom.addEventListener("change" , converterpress);
 
 //**************************************************************************** */
 // Funciones para (Mostrar) cada card de magnitudes al apretar el Boton en la card:
@@ -100,6 +135,7 @@ botonActivaPress.addEventListener("click", () => {
     limpiaTodo();
     sobrecapa.style.display = "flex";
     cardMostrarPress.style.display = "flex";
+    converterpress();
 })
 
 botonActivaTemp.addEventListener("click", () => {

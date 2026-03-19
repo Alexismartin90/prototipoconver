@@ -210,3 +210,8 @@
         font-size: small;
     }
 }
+
+/* Ocultar magnitudes que su unidad ya se selecciono en la option */
+.oculto_unidad_usada{
+    display: none;
+}
