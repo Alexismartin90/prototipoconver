@@ -82,10 +82,10 @@ const converterDist = ()=>{
     } else if(valorOption === "kilo"){
         kmfuera.classList.add("oculto_unidad_usada");
         document.getElementById("kmout").innerText = (valorNumero).toFixed(3);
-        document.getElementById("millaout").innerText = (valorNumero / 1.609).toFixed(3);
+        document.getElementById("millaout").innerText = (valorNumero / 1.60934).toFixed(3);
     } else {
         millafuera.classList.add("oculto_unidad_usada");
-        document.getElementById("kmout").innerText = (valorNumero * 1.609).toFixed(3);
+        document.getElementById("kmout").innerText = (valorNumero * 1.60934).toFixed(3);
         document.getElementById("millaout").innerText = (valorNumero).toFixed(3);
     }
 }
@@ -101,21 +101,51 @@ const converterpress = ()=>{
     valorOption = pressOptDom.value;
     psifuera = document.querySelector(".psiDesaparece");
     barfuera = document.querySelector(".barDesaparece");
-    atmbarfuera = document.querySelector(".atmDesaparece");
+    atmfuera = document.querySelector(".atmDesaparece");
     inhgfuera = document.querySelector(".inhgDesaparece");
     hpafuera = document.querySelector(".hpaDesaparece");
     psifuera.classList.remove("oculto_unidad_usada");
     barfuera.classList.remove("oculto_unidad_usada");
-    atmbarfuera.classList.remove("oculto_unidad_usada");
+    atmfuera.classList.remove("oculto_unidad_usada");
     inhgfuera.classList.remove("oculto_unidad_usada");
     hpafuera.classList.remove("oculto_unidad_usada");
-    if(valorOption === "" || isNaN(valorNumero)){
+    if (valorOption === "" || isNaN(valorNumero)){
         document.getElementById("psiOut").innerText = "Ingrese datos";
         document.getElementById("barOut").innerText = "Ingrese datos";
         document.getElementById("atmOut").innerText = "Ingrese datos";
         document.getElementById("inhgOut").innerText = "Ingrese datos";
         document.getElementById("hpaOut").innerText = "Ingrese datos";
         return;
+    } else if (valorOption === "psi") {
+        psifuera.classList.add("oculto_unidad_usada");
+        document.getElementById("barOut").innerText = (valorNumero / 14.504).toFixed(3);
+        document.getElementById("atmOut").innerText = (valorNumero / 14.696).toFixed(3);
+        document.getElementById("inhgOut").innerText = (valorNumero * 2.036).toFixed(3);
+        document.getElementById("hpaOut").innerText = (valorNumero * 68.947).toFixed(3);
+    } else if (valorOption === "bar") {
+        barfuera.classList.add("oculto_unidad_usada");
+        document.getElementById("psiOut").innerText = (valorNumero * 14.504).toFixed(3);
+        document.getElementById("atmOut").innerText = (valorNumero / 1.013).toFixed(3);
+        document.getElementById("inhgOut").innerText = (valorNumero * 29.53).toFixed(3);
+        document.getElementById("hpaOut").innerText = (valorNumero * 1000).toFixed(3);
+    } else if (valorOption === "atm") {
+        atmfuera.classList.add("oculto_unidad_usada");
+        document.getElementById("psiOut").innerText = (valorNumero * 14.696).toFixed(3);
+        document.getElementById("barOut").innerText = (valorNumero * 1.013).toFixed(3);
+        document.getElementById("inhgOut").innerText = (valorNumero * 29.921).toFixed(3);
+        document.getElementById("hpaOut").innerText = (valorNumero * 1013.25).toFixed(3);
+    } else if (valorOption === "inhg") {
+        inhgfuera.classList.add("oculto_unidad_usada");
+        document.getElementById("psiOut").innerText = (valorNumero / 2.036).toFixed(3);
+        document.getElementById("barOut").innerText = (valorNumero / 29.53).toFixed(3);
+        document.getElementById("atmOut").innerText = (valorNumero / 29.921).toFixed(3);
+        document.getElementById("hpaOut").innerText = (valorNumero * 33.8639).toFixed(3);
+    } else {
+        hpafuera.classList.add("oculto_unidad_usada");
+        document.getElementById("psiOut").innerText = (valorNumero / 68.948).toFixed(3);
+        document.getElementById("barOut").innerText = (valorNumero / 1000).toFixed(3);
+        document.getElementById("atmOut").innerText = (valorNumero / 1013).toFixed(3);
+        document.getElementById("inhgOut").innerText = (valorNumero / 33.864).toFixed(3);
     }
 
 }
