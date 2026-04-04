@@ -12,7 +12,7 @@
     <!-- Barra de arriba estilo navbar -->
     <section class="barraSuperior">
         <h1 class="barraSuperior__h1">Sistema de Conversión de Unidades</h1>
-        <h2 class="barraSuperior__h2">Herramienta diseñada para facilitar el trabajo en el taller</h2>
+        <!-- <h2 class="barraSuperior__h2">Herramienta diseñada para facilitar el trabajo en el taller</h2> -->
     </section>
 
     <!-- Seccion principal con las Cards de cada magnitud -->
@@ -131,17 +131,17 @@
                 </select>
             </div>
             <div class="calc__div">
-                <div class="calc__result">
+                <div class="calc__result centiDesaparece">
                     <p>°C:</p>
-                    <div class="output"><p>Resultado</p></div>
+                    <div class="output"><p id="centiOut"></p></div>
                 </div>
-                <div class="calc__result">
+                <div class="calc__result farenDesaparece">
                     <p>°F:</p>
-                    <div class="output"><p>Resultado</p></div>
+                    <div class="output"><p id="farenOut"></p></div>
                 </div>
-                <div class="calc__result">
+                <div class="calc__result kelvinDesaparece">
                     <p style="margin-left: 0.4rem;">K:</p>
-                    <div class="output"><p>Resultado</p></div>
+                    <div class="output"><p id="kelvinOut"></p></div>
                 </div>
             </div>
             <button class="volver">Volver</button>
@@ -236,7 +236,8 @@
 
     <!-- aca abajo el Footer -->
     <footer class="footerMain">
-        <p>© 2026 Alexis Gomez. Todos los derechos reservados.</p>
+        <p>© 2026 Alexis Gomez.</p>
+        <p>Todos los derechos reservados.</p>
     </footer>
     <script src="./javascript/script.js"></script>
 </body>

@@ -71,11 +71,11 @@ const distOptDom = document.getElementById("dist2"); //DOM value Select Option
 const converterDist = ()=>{
     valorNumero = parseFloat(distValueDom.value);
     valorOption = distOptDom.value;
-    kmfuera = document.querySelector(".KiloDesaparece");
-    millafuera = document.querySelector(".millaDesaparece");
+    const kmfuera = document.querySelector(".KiloDesaparece");
+    const millafuera = document.querySelector(".millaDesaparece");
     kmfuera.classList.remove("oculto_unidad_usada");
     millafuera.classList.remove("oculto_unidad_usada");
-    if(valorOption === "" || isNaN(valorNumero)){
+    if (valorOption === "" || isNaN(valorNumero)){
         document.getElementById("kmout").innerText = "Ingrese datos";
         document.getElementById("millaout").innerText = "Ingrese datos";
         return;
@@ -99,11 +99,11 @@ const pressOptDom = document.getElementById("pres2"); //DOM value Select Option
 const converterpress = ()=>{
     valorNumero = parseFloat(pressValueDom.value);
     valorOption = pressOptDom.value;
-    psifuera = document.querySelector(".psiDesaparece");
-    barfuera = document.querySelector(".barDesaparece");
-    atmfuera = document.querySelector(".atmDesaparece");
-    inhgfuera = document.querySelector(".inhgDesaparece");
-    hpafuera = document.querySelector(".hpaDesaparece");
+    const psifuera = document.querySelector(".psiDesaparece");
+    const barfuera = document.querySelector(".barDesaparece");
+    const atmfuera = document.querySelector(".atmDesaparece");
+    const inhgfuera = document.querySelector(".inhgDesaparece");
+    const hpafuera = document.querySelector(".hpaDesaparece");
     psifuera.classList.remove("oculto_unidad_usada");
     barfuera.classList.remove("oculto_unidad_usada");
     atmfuera.classList.remove("oculto_unidad_usada");
@@ -152,6 +152,29 @@ const converterpress = ()=>{
 pressValueDom.addEventListener("input" , converterpress)
 pressOptDom.addEventListener("change" , converterpress);
 
+// Conversion de Temperatura
+
+const tempValueDom = document.getElementById("temp1");
+const tempOptDom = document.getElementById("temp2");
+const convertertemp = () => {
+    valorNumero = parseFloat(tempValueDom.value)
+    valorOption = tempOptDom.value;
+    const centifuera = document.querySelector(".centiDesaparece");
+    const farenfuera = document.querySelector(".farenDesaparece");
+    const kelvinfuera = document.querySelector(".kelvinDesaparece");
+    centifuera.classList.remove("oculto_unidad_usada");
+    farenfuera.classList.remove("oculto_unidad_usada");
+    kelvinfuera.classList.remove("oculto_unidad_usada");
+    if (valorOption === "" || isNaN(valorNumero)) {
+        document.getElementById("centiOut").innerHTML = "Ingrese datos";
+        document.getElementById("farenOut").innerText = "Ingrese datos"; 
+        document.getElementById("kelvinOut").innerText = "Ingrese datos"; 
+    }
+
+}
+tempValueDom.addEventListener("input" , convertertemp);
+tempOptDom.addEventListener("change" , convertertemp);
+
 //**************************************************************************** */
 // Funciones para (Mostrar) cada card de magnitudes al apretar el Boton en la card:
 botonActivaDist.addEventListener("click", () => {
@@ -172,6 +195,7 @@ botonActivaTemp.addEventListener("click", () => {
     limpiaTodo();
     sobrecapa.style.display = "flex";
     cardMostrarTemp.style.display = "flex";
+    convertertemp();
 })
 
 botonActivaTorque.addEventListener("click",  () => {
