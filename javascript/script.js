@@ -166,9 +166,22 @@ const convertertemp = () => {
     farenfuera.classList.remove("oculto_unidad_usada");
     kelvinfuera.classList.remove("oculto_unidad_usada");
     if (valorOption === "" || isNaN(valorNumero)) {
-        document.getElementById("centiOut").innerHTML = "Ingrese datos";
+        document.getElementById("centiOut").innerText = "Ingrese datos";
         document.getElementById("farenOut").innerText = "Ingrese datos"; 
-        document.getElementById("kelvinOut").innerText = "Ingrese datos"; 
+        document.getElementById("kelvinOut").innerText = "Ingrese datos";
+        return; 
+    } else if (valorOption === "c") {
+        centifuera.classList.add("oculto_unidad_usada");
+        document.getElementById("farenOut").innerText = ((valorNumero * 9/5) + 32).toFixed(3);
+        document.getElementById("kelvinOut").innerText = (valorNumero + 273.15).toFixed(3);
+    } else if (valorOption === "f") {
+        farenfuera.classList.add("oculto_unidad_usada");
+        document.getElementById("centiOut").innerText = ((valorNumero - 32) * 5/9).toFixed(3);
+        document.getElementById("kelvinOut").innerText = ((valorNumero - 32) * 5/9 + 273.15).toFixed(3);
+    } else {
+        kelvinfuera.classList.add("oculto_unidad_usada");
+        document.getElementById("centiOut").innerText = (valorNumero - 273.15).toFixed(3);
+        document.getElementById("farenOut").innerText = ((valorNumero - 273.15) * 9/5 + 32).toFixed(3);
     }
 
 }
