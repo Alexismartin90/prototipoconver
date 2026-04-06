@@ -113,7 +113,7 @@
 /* aca cada el contenedor de cada magnitud */
 
 .calc{
-    width: 25rem;
+    width: 20rem;
     height: auto;
     padding: 2rem 1rem 2rem 1rem;
     background-color: var(--color-bg-secundario);
@@ -126,6 +126,8 @@
 
 .calc__div{
     width: 100%;
+    display: flex;
+    flex-direction: column;
     margin-bottom: 2rem;
 }
 

@@ -118,34 +118,34 @@ const converterpress = ()=>{
         return;
     } else if (valorOption === "psi") {
         psifuera.classList.add("oculto_unidad_usada");
-        document.getElementById("barOut").innerText = (valorNumero / 14.504).toFixed(3);
+        document.getElementById("barOut").innerText = (valorNumero / 14.5038).toFixed(3);
         document.getElementById("atmOut").innerText = (valorNumero / 14.696).toFixed(3);
-        document.getElementById("inhgOut").innerText = (valorNumero * 2.036).toFixed(3);
-        document.getElementById("hpaOut").innerText = (valorNumero * 68.947).toFixed(3);
+        document.getElementById("inhgOut").innerText = (valorNumero * 2.03602).toFixed(3);
+        document.getElementById("hpaOut").innerText = (valorNumero * 68.9476).toFixed(3);
     } else if (valorOption === "bar") {
         barfuera.classList.add("oculto_unidad_usada");
-        document.getElementById("psiOut").innerText = (valorNumero * 14.504).toFixed(3);
-        document.getElementById("atmOut").innerText = (valorNumero / 1.013).toFixed(3);
-        document.getElementById("inhgOut").innerText = (valorNumero * 29.53).toFixed(3);
+        document.getElementById("psiOut").innerText = (valorNumero * 14.5038).toFixed(3);
+        document.getElementById("atmOut").innerText = (valorNumero / 1.01325).toFixed(3);
+        document.getElementById("inhgOut").innerText = (valorNumero * 29.52998).toFixed(3);
         document.getElementById("hpaOut").innerText = (valorNumero * 1000).toFixed(3);
     } else if (valorOption === "atm") {
         atmfuera.classList.add("oculto_unidad_usada");
         document.getElementById("psiOut").innerText = (valorNumero * 14.696).toFixed(3);
-        document.getElementById("barOut").innerText = (valorNumero * 1.013).toFixed(3);
-        document.getElementById("inhgOut").innerText = (valorNumero * 29.921).toFixed(3);
+        document.getElementById("barOut").innerText = (valorNumero * 1.01325).toFixed(3);
+        document.getElementById("inhgOut").innerText = (valorNumero * 29.9213).toFixed(3);
         document.getElementById("hpaOut").innerText = (valorNumero * 1013.25).toFixed(3);
     } else if (valorOption === "inhg") {
         inhgfuera.classList.add("oculto_unidad_usada");
-        document.getElementById("psiOut").innerText = (valorNumero / 2.036).toFixed(3);
-        document.getElementById("barOut").innerText = (valorNumero / 29.53).toFixed(3);
-        document.getElementById("atmOut").innerText = (valorNumero / 29.921).toFixed(3);
+        document.getElementById("psiOut").innerText = (valorNumero / 2.03602).toFixed(3);
+        document.getElementById("barOut").innerText = (valorNumero / 29.52998).toFixed(3);
+        document.getElementById("atmOut").innerText = (valorNumero / 29.9213).toFixed(3);
         document.getElementById("hpaOut").innerText = (valorNumero * 33.8639).toFixed(3);
     } else {
         hpafuera.classList.add("oculto_unidad_usada");
-        document.getElementById("psiOut").innerText = (valorNumero / 68.948).toFixed(3);
+        document.getElementById("psiOut").innerText = (valorNumero / 68.9476).toFixed(3);
         document.getElementById("barOut").innerText = (valorNumero / 1000).toFixed(3);
-        document.getElementById("atmOut").innerText = (valorNumero / 1013).toFixed(3);
-        document.getElementById("inhgOut").innerText = (valorNumero / 33.864).toFixed(3);
+        document.getElementById("atmOut").innerText = (valorNumero / 1013.25).toFixed(3);
+        document.getElementById("inhgOut").innerText = (valorNumero / 33.8639).toFixed(3);
     }
 
 }
